@@ -1,0 +1,77 @@
+body{
+    margin-top: 20px;
+
+    margin: 0;
+}
+.main{
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.topbar{
+    background-color: rgb(10, 57, 213);
+    overflow: hidden;
+    background: none !important;
+    overflow: auto;
+    border-width: 0px !important;
+}
+.topbar a{
+    float: right;
+    color: rgb(12, 12, 12);
+    text-align: center;
+    padding: 20px 26px;
+    text-decoration: none;
+    font-size: 26px;
+}
+.sidebar{
+    
+    height: 100%;
+}
+.sidebar a{
+    margin-left: 10px;
+    display: block;
+    
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    background-color: whitesmoke;
+}
+
+.car-body{
+    margin-top: 30px;
+}
+.car-body a{
+    text-decoration: none;
+    text-align: center;
+    
+    color: black;
+}
+
+.car-body a:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+.heading h1{
+    /* CSS for h1 heading */
+     color: #333; 
+     font-family: 'Arial', sans-serif; 
+     font-size: 3em; 
+     font-weight: bold; 
+     text-align: center; 
+     margin-bottom: 20px; 
+ }
+ .bordereffect{
+    box-shadow: 10px 15px 25px 0 rgba(0,0,0,.2);
+ }
+ 
+
+
+

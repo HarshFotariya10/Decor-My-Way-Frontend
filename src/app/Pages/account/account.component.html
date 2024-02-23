@@ -1,0 +1,164 @@
+
+    <head>
+    </head>
+    <body>
+        <div *ngIf="showorderpage" class="container">
+            <div class="main">
+                
+                <div class="row">
+                    <div class="col-lg-3">
+                       <div class=" text-center sidebar">
+                            <div class="car-body">
+                                <div class="mt-2">
+                                    <a href="" class="">Home</a>
+                                    <a class="" (click)="order()">Orders</a>
+                                    <a href="" class="">Contact Us</a>
+                                    <a href="" class="">Setting</a>
+                                    <a href="" class="">Sign Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mt-1 heading">
+                        <h1 class="">Profile</h1>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5 class="">Full Name</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    Burt Macklin
+                                </div>
+                            </div>
+                        </div>
+                            <hr>
+                            <div class="row">
+                            <div class="col-md-3">
+                                <h5 class="">Email</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                               <span> username@gmail.com </span>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Phone</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                00997788554433
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Address</h5>
+                            </div>
+                            <div class="col-md-9 text-secondary">
+                                street no,5 ,xyz
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            
+            <!--order page-->
+        <section *ngIf="!showorderpage" class="h-100 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-10 col-xl-8" style="width: 100%;">
+                  <div class="card" style="border-radius: 10px;">
+                    <div class="card-header px-4 py-5" style="display: flex;">
+                      <Button  type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" (click)="profilepage()"><i class="fa fa-arrow-left" aria-hidden="true"></i></Button>
+                      <h1 class="text-muted mb-0">Decor My Way</h1>
+                    </div>
+                    <div class="card-body p-4">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="lead fw-normal mb-0" style="color: #a8729a;">Your Orders</p>
+                        
+                      </div>
+
+
+                      <div class="card shadow-0 border mb-4 ">
+                        <div class="card-body bordereffect">
+                          <a href="" style="text-decoration: none;">
+                          <div class="row">
+                            <div class="col-md-2">
+                              <img src="https://www.wakefit.co/blog/wp-content/uploads/2022/01/Genuine-Leather-min.jpg"
+                                class="img-fluid" alt="furniture">
+                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                              <p class="text-muted mb-0">Sofa</p>
+                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                              <p class="text-muted mb-0 small">Brown
+                              </p>
+                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                              <p class="text-muted mb-0 small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At iure nemo cum, illo facilis maiores porro animi nihil et, laboriosam consectetur, doloribus impedit eius mollitia rerum quos corrupti voluptas accusantium?</p>
+                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                              <p class="text-muted mb-0 small">Qty: 1</p>
+                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                              <p class="text-muted mb-0 small">$199</p>
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+
+
+                      <div class="card shadow-0 border mb-4">
+                        <div class="card-body bordereffect">
+                          <div class="row">
+                            <a href="" class="" style="text-decoration: none;">
+                              <div class="row">
+                                <div class="col-md-2">
+                                  <img src="https://www.wakefit.co/blog/wp-content/uploads/2022/01/Genuine-Leather-min.jpg"
+                                    class="img-fluid" alt="furniture">
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                  <p class="text-muted mb-0">Sofa</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                  <p class="text-muted mb-0 small">Brown
+                                  </p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                  <p class="text-muted mb-0 small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At iure nemo cum, illo facilis maiores porro animi nihil et, laboriosam consectetur, doloribus impedit eius mollitia rerum quos corrupti voluptas accusantium?</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                  <p class="text-muted mb-0 small">Qty: 1</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                  <p class="text-muted mb-0 small">$199</p>
+                                </div>
+                              </div>
+                            </a>  
+                          </div>
+                        </div>
+                      </div>
+          
+                      
+          
+                      <!--<div class="d-flex justify-content-between">
+                        <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
+                        <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
+                      </div>
+          
+                      <div class="d-flex justify-content-between mb-5">
+                        <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
+                        <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
+                      </div>-->
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </body>
+
