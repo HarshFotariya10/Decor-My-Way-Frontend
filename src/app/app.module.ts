@@ -22,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountComponent } from './Pages/account/account.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedService } from './shared.service';
+import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
+
 
 
 
@@ -41,6 +44,11 @@ import { HttpClientModule } from '@angular/common/http';
                 CartComponent,
                 ShopComponent,
                 AccountComponent,
+                SearchpageComponent,
+                
+                
+                
+               
                   
   ],
   imports: [
@@ -53,9 +61,10 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     
     
+    
    
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

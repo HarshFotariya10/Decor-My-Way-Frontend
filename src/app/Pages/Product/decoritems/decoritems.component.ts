@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-decoritems',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./decoritems.component.css']
 })
 export class DecoritemsComponent {
-  constructor(private http :HttpClient){}
+  constructor(private http :HttpClient,private sharedService: SharedService){}
   ngOnInit(): void {
     this.getFurnitureCategory();
   }
@@ -19,4 +20,7 @@ export class DecoritemsComponent {
         console.log(this.decorItemCategory)
       })
     }
+    sendData(categoryID:number){
+      this.sharedService.setSharedData(categoryID); 
+  }
 }

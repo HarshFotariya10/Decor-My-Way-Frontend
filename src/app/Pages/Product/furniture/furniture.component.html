@@ -10,7 +10,7 @@
 
 					<!-- Start Column 1 -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let f of furnitureCategory">
-						<a class="product-item" href="cart.html">
+						<a class="product-item" (click)="sendData(f.categoryID)" routerLink="/shop">
 							<img src={{f.imagename}} class="img-fluid product-thumbnail">
 							<h3 class="product-title">{{f.categoryname}}</h3>
 							<span class="icon-cross">

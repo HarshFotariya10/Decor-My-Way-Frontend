@@ -9,6 +9,8 @@ import { ContactComponent } from './Pages/contact/contact.component';
 import { DecoritemsComponent } from './Pages/Product/decoritems/decoritems.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { AccountComponent } from './Pages/account/account.component';
+import { ShopComponent } from './Pages/Product/shop/shop.component';
+import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,12 @@ const routes: Routes = [
   },{
     path:'profile',
     component:AccountComponent
+  },{
+    path:'shop',
+    component:ShopComponent
+  },{
+    path:'search',
+    component:SearchpageComponent
   }
   
 ];

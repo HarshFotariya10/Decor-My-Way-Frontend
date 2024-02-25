@@ -4,6 +4,7 @@ import {faUser} from '@fortawesome/free-solid-svg-icons'
 import { NgModule } from '@angular/core';
 import { FormControl, FormGroup, Validators,FormBuilder,ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'navbar',
@@ -79,9 +80,14 @@ export class NavbarComponent {
   formGroup: any;
 
 
-  constructor(private http :HttpClient,private renderer: Renderer2, private el: ElementRef){
+  constructor(private http :HttpClient,private renderer: Renderer2, private el: ElementRef,private sharedService: SharedService){
 
   }
+
+  searchKeyword: string = '';
+  sendData(SearchData:string){
+    this.sharedService.setSharedDataString(SearchData); 
+}
 
 
  

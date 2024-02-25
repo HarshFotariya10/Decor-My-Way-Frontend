@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RouteConfigLoadEnd, Router } from '@angular/router';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-furniture',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FurnitureComponent implements OnInit{
 
-  constructor(private http :HttpClient){}
+  constructor(private http :HttpClient,private router: Router,private sharedService: SharedService){}
   ngOnInit(): void {
     this.getFurnitureCategory();
   }
@@ -20,4 +22,11 @@ export class FurnitureComponent implements OnInit{
         console.log(this.furnitureCategory)
       })
     }
+
+
+    sendData(categoryID:number){
+        this.sharedService.setSharedData(categoryID); 
+    }
+
+
 }

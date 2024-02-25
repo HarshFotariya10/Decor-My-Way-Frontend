@@ -14,8 +14,8 @@
             <select class="search-select">
                 <option>All</option>
             </select>
-            <input placeholder="Search" class="search-input" >
-            <div class="search-icon" ><i class="fa-solid fa-magnifying-glass"></i></div>
+            <input placeholder="Search" class="search-input" [(ngModel)]="searchKeyword" >
+            <div class="search-icon" ><i class="fa-solid fa-magnifying-glass" (click)="sendData(searchKeyword)" routerLink="/search"></i></div>
         </div>
         <div class="nav-cart">
             <a routerLink="/cart" style="text-decoration: none;color: black;"><i class="fa-solid fa-cart-shopping" ></i></a>
