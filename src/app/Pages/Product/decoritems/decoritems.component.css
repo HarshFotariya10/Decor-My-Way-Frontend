@@ -11,6 +11,10 @@
     margin-bottom: 20px; 
   
 }
+img{
+  height: 280px;
+  width: 300px;
+}
   
   .product-section {
     padding: 2rem 0; }

@@ -84,3 +84,8 @@
         visibility: visible; }
       .product-section .product-item:hover:before {
         height: 70%; }
+
+       img{
+          height: 280px;
+          width: 300px;
+      }

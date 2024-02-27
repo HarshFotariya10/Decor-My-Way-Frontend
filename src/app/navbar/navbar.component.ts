@@ -65,6 +65,11 @@ export class NavbarComponent {
         
       this.showloggedin=false
       alert("User Login Succesfully ");
+      var Email = loginvalue.email?.toString();
+      this.SendEmail(Email);
+      this.sendAuthanticated(true);
+      this.getProfiledata(Email);
+      
     }
     else{
       alert("Incorret Email and Password Not match");
@@ -79,6 +84,13 @@ export class NavbarComponent {
   icon=faUser;
   formGroup: any;
 
+  
+  SendEmail(send:any){
+    this.sharedService.setSharedDataEmail(send);
+  }
+  sendAuthanticated(send:boolean){
+    this.sharedService.setAuthenticationStatus(send);
+  }
 
   constructor(private http :HttpClient,private renderer: Renderer2, private el: ElementRef,private sharedService: SharedService){
 
@@ -88,7 +100,19 @@ export class NavbarComponent {
   sendData(SearchData:string){
     this.sharedService.setSharedDataString(SearchData); 
 }
+profileData: any = {};
 
+getProfiledata(email: any):void {
+  this.http.get(`http://localhost:8080/getemail/${email}`).subscribe((data: any) => {
+    this.profileData = data; 
+    
+    this.SendUserId(this.profileData?.id);  
+  });
+}
+SendUserId(UserId:number)
+{
+  this.sharedService.setSharedDataUserID(UserId);
+}
 
  
  

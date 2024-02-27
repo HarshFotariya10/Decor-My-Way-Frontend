@@ -2,6 +2,7 @@
     <div class="container py-5">
       <div class="row justify-content-center mb-3">
         <ng-container *ngIf="searchList.length > 0; else noResults">
+          <h2 class="text-success">Results found for '{{ resultcount }}'.</h2>
           <div class="card shadow-0 border rounded-3 " style="margin-bottom: 10px;" *ngFor="let p of searchList">
             <div class="card-body">
               <div class="row">
@@ -38,7 +39,7 @@
                   <h6 class="text-success">Free shipping</h6>
                   <div class="d-flex flex-column mt-4">
                     <button class="btn btn-primary btn-sm" type="button">Details</button>
-                    <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                    <button class="btn btn-outline-primary btn-sm mt-2" type="button" (click)="AddtoCart(p.productId)">
                       Add to Cart
                     </button>
                   </div>
