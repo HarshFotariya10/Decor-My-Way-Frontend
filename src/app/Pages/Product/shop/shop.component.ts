@@ -31,7 +31,7 @@ export class ShopComponent implements OnInit {
   SelectCategory(categoryID:number){
     this.http.get(`http://localhost:8080/product/category/${categoryID}`).subscribe((data:any)=>{ 
       this.SelectedCategory=data;
-      console.log(this.SelectedCategory)
+  
     })
   }
 

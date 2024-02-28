@@ -15,16 +15,16 @@ export class SearchpageComponent implements OnInit {
     this.sharedService.sharedDataString$.subscribe((searchKeyword) => {
      this.searchKeyword = searchKeyword; 
      this.searchproduct();  
-
+    });
          //Fetch Authenticated Value  
     this.sharedService.isAuthenticated$.subscribe((data)=>{
       this.isUserLoggedin = data;
-    })
+    });
      //
      this.sharedService.sharedDataUserId$.subscribe((data)=>{
       this.UserId=data
-    })
     });
+    
   }
   searchList :any[] = [];
   resultcount:number=0;
