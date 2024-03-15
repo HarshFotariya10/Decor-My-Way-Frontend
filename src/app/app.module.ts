@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
+import { OrderComponent } from './Pages/order/order.component';
 
 
 
@@ -45,7 +46,7 @@ import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
                 ShopComponent,
                 AccountComponent,
                 SearchpageComponent,
-                
+                OrderComponent
                 
                 
                

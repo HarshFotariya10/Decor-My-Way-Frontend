@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -45,12 +46,17 @@ result:any
       
      
       const body ={}
-      console.log(this.UserId);
-
-      this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${productId}`,body).subscribe((data:any)=>{
-      this.result=data;
-      alert("Added to Cart Succefully !!")
-      })
+      
+      this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${productId}`, body).subscribe((data: any) => {
+        
+        if (data.message == 'Product added to cart successfully') {
+          alert('Added to Cart Successfully!');
+        } 
+      },
+      (error) => {
+        
+        alert('Product quantity not available');
+      });
     }
     else{
       alert("Please Login !!!!")

@@ -1,0 +1,142 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Detail</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom CSS styles */
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <!-- Order Summary Section -->
+        <section id="order-summary">
+            <h2>Order Summary</h2>
+            <!-- Product List -->
+            <div class="product-item">
+              <!-- Product 1 -->
+              <div class="media">
+                <img src="product1.jpg" class="mr-3" alt="Product 1">
+                <div class="media-body">
+                  <h5 class="mt-0">Product 1</h5>
+                  <p>Price: $19.99</p>
+                  <p>Quantity: 1</p>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <!-- Product 2 -->
+              <div class="media">
+                <img src="product2.jpg" class="mr-3" alt="Product 2">
+                <div class="media-body">
+                  <h5 class="mt-0">Product 2</h5>
+                  <p>Price: $29.99</p>
+                  <p>Quantity: 2</p>
+                </div>
+              </div>
+            </div>
+            <!-- Add more products as needed -->
+            <!-- Total Amount -->
+            <div class="total-amount mt-4">
+              Total Amount: $79.97
+            </div>
+        </section>
+
+        <!-- Address Section -->
+        <section id="address-section">
+            <h2>Address</h2>
+            <!-- Address Display -->
+            <div class="address-info">
+              <h1>Name: John Doe</h1>
+              <p>Address: 1234 Main St.</p>
+              
+            </div>
+            <!-- Edit Address Button -->
+            <button type="button" class="btn btn-primary mt-3" id="editAddressBtn">
+              Edit Address
+            </button>
+          </section>
+          
+        </div>
+          
+
+      
+
+      <div class="col-md-4">
+        <!-- Payment System Section -->
+        <section id="payment-system">
+                        <!-- This section displays payment options or allows users to add a new payment method -->
+                        <!-- This section displays payment options or allows users to add a new payment method -->
+                <h2>Payment System</h2>
+                <!-- Payment Method Options -->
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="creditCard">
+                    <label for="creditCard"><i class="fas fa-credit-card"></i> Credit Card</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="paypal">
+                    <label for="paypal"><i class="fab fa-paypal"></i> PayPal</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="paymentMethod" id="bankTransfer">
+                    <label for="bankTransfer"><i class="fas fa-university"></i> Bank Transfer</label>
+                </div>
+        </section>
+
+        <!-- Review Section -->
+        <section id="place-order">
+            
+          
+            <!-- Button for placing the order -->
+            <button class="truck-button" (click)="placeOrder()">Place Order</button>
+          </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+  <div id="editAddressModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Address</h2>
+      <!-- Address Form -->
+      <form id="addressForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" placeholder="Enter your address">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="Enter your city">
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input type="text" class="form-control" id="state" placeholder="Enter your state">
+        </div>
+        <div class="form-group">
+          <label for="postalCode">Postal Code</label>
+          <input type="text" class="form-control" id="postalCode" placeholder="Enter your postal code">
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" class="form-control" id="country" placeholder="Enter your country">
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+  
+ 

@@ -67,6 +67,7 @@ export class NavbarComponent {
       alert("User Login Succesfully ");
       var Email = loginvalue.email?.toString();
       this.SendEmail(Email);
+      this.getProfiledata1(Email);
       this.sendAuthanticated(true);
       this.getProfiledata(Email);
       
@@ -83,6 +84,16 @@ export class NavbarComponent {
   showloginpage=true;
   icon=faUser;
   formGroup: any;
+  profileData1: any = {};
+  username:any
+
+  getProfiledata1(email: any):void {
+    this.http.get(`http://localhost:8080/getemail/${email}`).subscribe((data: any) => {
+      this.profileData1 = data; 
+      console.log(this.profileData1.fullname);
+    this.username =  this.profileData1?.fullname;
+    });
+  }
 
   
   SendEmail(send:any){

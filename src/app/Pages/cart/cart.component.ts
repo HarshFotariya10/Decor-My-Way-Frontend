@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 
 export interface CartItem {
@@ -42,7 +43,7 @@ export class CartComponent implements OnInit{
     ]
 }];
 
-  constructor(private http :HttpClient,private sharedService: SharedService){}
+  constructor(private http :HttpClient,private router: Router,private sharedService: SharedService){}
   ngOnInit():void  {
     this.sharedService.isAuthenticated$.subscribe((data)=>{
       this.isUserLoggedin = data;
@@ -51,10 +52,7 @@ export class CartComponent implements OnInit{
      this.sharedService.sharedDataUserId$.subscribe((data)=>{
       this.UserId=data
     });
-    this.http.get(`http://localhost:8080/cart/view/${this.UserId}`).subscribe((data:any)=>{
-      this.CartData=data;
-      console.log(this.CartData)
-    }) 
+    this.cart();
   }
   isUserLoggedin=false;
 
@@ -63,7 +61,33 @@ export class CartComponent implements OnInit{
   
   ProductId:any[]=[]
   UserId:any;
-
-
+  cart(){
+    this.http.get(`http://localhost:8080/cart/view/${this.UserId}`).subscribe((data:any)=>{
+      this.CartData=data;
+      console.log(this.CartData)
+    }) 
+  }
+  reduceQuantity(productId:number){
+    const body ={}
+    this.http.post(`http://localhost:8080/cart/reduceQuantity/${this.UserId}/${productId}`,body).subscribe((data:any)=>{
+    this.ngOnInit();  
+  });    
+  }
+  Addcart(productId:number){
+    const body ={}
+      
+    this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${productId}`, body).subscribe((data: any) => {
+      
+      if (data.message == 'Product added to cart successfully') {
+        this.ngOnInit(); 
+        
+      } 
+    },
+    (error) => {
+      
+      alert('Product quantity not available');
+    });
+  }
+  
   
 }
