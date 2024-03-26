@@ -19,7 +19,7 @@ export class FurnitureComponent implements OnInit{
     getFurnitureCategory(){
       this.http.get('http://localhost:8080/categories/furniture').subscribe((data:any)=>{ 
         this.furnitureCategory=data;
-        console.log(this.furnitureCategory)
+        
       })
     }
 

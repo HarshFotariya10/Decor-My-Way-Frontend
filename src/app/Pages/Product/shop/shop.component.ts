@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -12,7 +13,7 @@ export class ShopComponent implements OnInit {
   categoryID:any;
   
   
-  constructor(private http :HttpClient,private sharedService: SharedService){}
+  constructor(private http :HttpClient,private sharedService: SharedService,private router:Router){}
   ngOnInit() {
     this.sharedService.sharedData$.subscribe((categoryID) => {
       this.categoryID = categoryID;
@@ -61,5 +62,11 @@ result:any
     else{
       alert("Please Login !!!!")
     }
+  }
+  sendproductId(productId:number){
+    this.sharedService.setSharedDataProductId(productId);
+    this.router.navigate(['/detailpage']);
+    
+
   }
 }

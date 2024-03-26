@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedService } from './shared.service';
 import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
 import { OrderComponent } from './Pages/order/order.component';
+import { ProductDetailComponent } from './Pages/product-detail/product-detail.component';
+import { OrderSuccessComponent } from './Pages/order-success/order-success.component';
 
 
 
@@ -46,7 +48,9 @@ import { OrderComponent } from './Pages/order/order.component';
                 ShopComponent,
                 AccountComponent,
                 SearchpageComponent,
-                OrderComponent
+                OrderComponent,
+                ProductDetailComponent,
+                OrderSuccessComponent
                 
                 
                

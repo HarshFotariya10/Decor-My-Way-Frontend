@@ -12,7 +12,7 @@ export interface CartItem {
 }
 
 export interface CartData {
-  cartId: null;
+  cartId: number;
   userId: number;
   totalamount: number;
   cartItems: CartItem[];
@@ -29,7 +29,7 @@ export interface CartData {
 export class CartComponent implements OnInit{
 
   CartData: CartData[] = [{
-    cartId: null,
+    cartId: 0,
     userId: 0,
     totalamount: 0,
     cartItems: [
@@ -61,6 +61,7 @@ export class CartComponent implements OnInit{
   
   ProductId:any[]=[]
   UserId:any;
+  //Cart Detailss
   cart(){
     this.http.get(`http://localhost:8080/cart/view/${this.UserId}`).subscribe((data:any)=>{
       this.CartData=data;
@@ -74,20 +75,34 @@ export class CartComponent implements OnInit{
   });    
   }
   Addcart(productId:number){
+          const body ={}
+
+          this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${productId}`, body).subscribe((data: any) => {
+            
+            if (data.message == 'Product added to cart successfully') {
+              this.ngOnInit()
+            } 
+          },
+          (error) => {
+            
+            alert('Product quantity not available');
+          });
+}
+
+
+  Checkout(){
     const body ={}
-      
-    this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${productId}`, body).subscribe((data: any) => {
-      
-      if (data.message == 'Product added to cart successfully') {
-        this.ngOnInit(); 
-        
-      } 
-    },
-    (error) => {
-      
-      alert('Product quantity not available');
-    });
+    
+    console.log(this.CartData[0].cartId);
+    if(this.isUserLoggedin == true){
+      this.http.post(`http://localhost:8080/orders/place/${this.CartData[0].cartId}/${this.UserId}`,body).subscribe((data:any)=>{
+        console.log(data);
+        this.router.navigate(['/checkout']);
+      })
+
+    }
+    else{
+      alert('Please login!!');
+    }
   }
-  
-  
 }

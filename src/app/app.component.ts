@@ -6,7 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   template: `
   <!--Header-->
   <navbar></navbar>
-  <app-order></app-order>
+  
   <router-outlet></router-outlet>
   
 

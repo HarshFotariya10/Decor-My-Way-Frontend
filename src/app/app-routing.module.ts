@@ -11,6 +11,9 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { AccountComponent } from './Pages/account/account.component';
 import { ShopComponent } from './Pages/Product/shop/shop.component';
 import { SearchpageComponent } from './Pages/searchpage/searchpage.component';
+import { OrderComponent } from './Pages/order/order.component';
+import { ProductDetailComponent } from './Pages/product-detail/product-detail.component';
+import { OrderSuccessComponent } from './Pages/order-success/order-success.component';
 
 const routes: Routes = [
   {
@@ -44,6 +47,15 @@ const routes: Routes = [
   },{
     path:'search',
     component:SearchpageComponent
+  },{
+    path:'checkout',
+    component:OrderComponent
+  },{
+    path:'detailpage',
+    component:ProductDetailComponent
+  },{
+    path:'ConfirmOrder',
+    component:OrderSuccessComponent
   }
   
 ];

@@ -42,4 +42,19 @@ export class SharedService {
   setSharedDataUserID(UserId: number) {
     this.sharedDataUserId.next(UserId);
   }
+
+  //ProductId Service For Detail Page
+  private sharedDataProductId = new BehaviorSubject<number>(0);
+  sharedDataProductID$ = this.sharedDataProductId.asObservable();
+
+  setSharedDataProductId(productID: number) {
+    this.sharedDataProductId.next(productID);
+  }
+  //OrderConfirmation Id For Order Confirm Page
+  private sharedDataConfirmId = new BehaviorSubject<number>(0);
+  sharedDataConfirmId$ = this.sharedDataConfirmId.asObservable();
+
+  setSharedDataConfirmId(productID: number) {
+    this.sharedDataConfirmId.next(productID);
+  }
 }

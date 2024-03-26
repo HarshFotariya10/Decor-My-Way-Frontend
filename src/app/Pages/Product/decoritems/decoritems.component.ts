@@ -17,7 +17,7 @@ export class DecoritemsComponent {
     getFurnitureCategory(){
       this.http.get('http://localhost:8080/categories/decoritems').subscribe((data:any)=>{ 
         this.decorItemCategory=data;
-        console.log(this.decorItemCategory)
+        
       })
     }
     sendData(categoryID:number){
