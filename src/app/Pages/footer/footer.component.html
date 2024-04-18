@@ -16,10 +16,10 @@
         </div>
         <div class="col-lg-4 p-4" style="background-color:ivory;font-family: initial; font-size: large;" >
             <h5 class="h-font fs-3" style="font-family: initial;font-size: x-large;font-style: oblique;">Links</h5><br>
-            <a href="#" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Home</a><br>
-            <a routerLink="/furniture"  class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;" >Furniture</a><br>
-            <a routerLink="/decoritems" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Decor Items</a><br>
-            <a routerLink="/contact" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Contact Us</a><br>
+            <a (click)="scrollToTop()" routerLink="/"  class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Home</a><br>
+            <a  class="scroll-to-top" routerLink="/furniture" (click)="scrollToTop()"  class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;" >Furniture</a><br>
+            <a routerLink="/decoritems" (click)="scrollToTop()" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Decor Items</a><br>
+            <a routerLink="/contact" (click)="scrollToTop()" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">Contact Us</a><br>
             <a href="#" class="text-decoration-none d-inline-block mb-2 text-dark" style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-style: oblique;">About</a><br>
         </div>
         <div class="col-lg-4 p-4 aeffect" style="background-color:ivory;">

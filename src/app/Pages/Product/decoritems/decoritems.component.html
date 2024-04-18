@@ -1,27 +1,25 @@
 
 		<!-- Start Product Section -->
-		<br>
-		<div class="product-section" style="background-color: beige;">
-			<div class="container">
-                <div class="heading">
-                    <h1>Decor Items</h1>
+<section class="product-section" style="background-color: #f5f5f5; padding: 50px 0;">
+    <div class="container">
+        <div class="heading text-center mb-5">
+            <h1 class="display-4">Decor Items</h1>
+            
+        </div>
+        <div class="row justify-content-center">
+            <!-- Product Cards -->
+            <div class="col-12 col-sm-6 col-md-4 mb-4" *ngFor="let f of decorItemCategory">
+                <div class="card border-0 shadow-sm">
+                    <img src="{{f.imagename}}" class="card-img-top img-fluid" alt="Product Image">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-3">{{f.categoryname}}</h3>
+                        <a (click)="sendData(f.categoryID)" routerLink="/shop" class="btn btn-primary btn-sm">Shop Now</a>
+                    </div>
                 </div>
-				<div class="row">
+            </div>
+            <!-- End Product Cards -->
+        </div>
+    </div>
+</section>
+<!-- End Product Section -->
 
-					<!-- Start Column 1 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0" *ngFor="let d of decorItemCategory">
-						<a class="product-item" (click)="sendData(d.categoryID)" routerLink="/shop">
-							<img src={{d.imagename}} class="img-fluid product-thumbnail">
-							<h3 class="product-title" style="aspect-ratio: 3/2;object-fit: contain;">{{d.categoryname}}</h3>
-							<span class="icon-cross">
-								<img src="assets/image/cross.svg" class="img-fluid">
-							</span> 
-						</a>
-					</div>
-                    
-                    <!-- End Column 1 -->
-				</div>
-			</div>
-		</div>
-		<br>
-		<!-- End Product Section -->

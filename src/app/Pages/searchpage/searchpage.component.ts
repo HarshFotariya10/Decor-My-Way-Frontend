@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { SharedService } from 'src/app/shared.service';
   styleUrl: './searchpage.component.css'
 })
 export class SearchpageComponent implements OnInit {
-  constructor(private http :HttpClient,private sharedService: SharedService){}
+  constructor(private http :HttpClient,private sharedService: SharedService,private router:Router){}
   searchKeyword:any;
   ngOnInit() {
     this.sharedService.sharedDataString$.subscribe((searchKeyword) => {
@@ -56,5 +57,10 @@ export class SearchpageComponent implements OnInit {
       alert("Please Login !!!!")
     }
   }
+  sendproductId(productId:number){
+    this.sharedService.setSharedDataProductId(productId);
+    this.router.navigate(['/detailpage']);
+    
 
+  }
 }

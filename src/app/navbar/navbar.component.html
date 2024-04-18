@@ -5,15 +5,13 @@
             <div class="logo"></div>
         </div>
         <div class="navbar-name">
-            <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="">
+            <a class="navbar-brand me-5 fw-bold fs-3 h-font" routerLink="/">
                 <span style="margin-left: 17px;">Decor My Way</span>
             </a>
         </div>
 
         <div class="nav-search" >
-            <select class="search-select">
-                <option>All</option>
-            </select>
+
             <input placeholder="Search" class="search-input" [(ngModel)]="searchKeyword" >
             <div class="search-icon" ><i class="fa-solid fa-magnifying-glass" (click)="sendData(searchKeyword)" routerLink="/search"></i></div>
         </div>

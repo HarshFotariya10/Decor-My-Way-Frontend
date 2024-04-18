@@ -73,5 +73,232 @@ body{
  }
  
 
+ .main{
+    width: 100%;
+}
+ h3{
+    text-align: center;
+    font-weight:bolder;
+    margin-top: 20px;
+    font-size: 30px;
+}
 
+@keyframes fadeInOut {
+    from { background: rgba(0, 0, 0, 0); }
+    to { background: rgba(0, 0, 0, 0.5); }
+  }
+
+  /* Apply the animation to the modal container */
+  .fadde {
+    animation: fadeInOut 0.3s ease;
+  }
+header button{
+    color: white;
+    background-color: black;
+}
+.inputgroup .input{
+    
+    border: 2px solid black;
+    width: 100%;
+    padding: 10px;
+    color: black;
+	outline:none;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+.inputgroup{
+	
+	display:flex;
+    width:100%;
+    position: relative;
+}
+.inputgroup span{
+	left:0;
+	margin-left: 10px;
+    margin-top: -6px; 
+    position: absolute;
+    top: 1rem;
+    color: grey;
+    pointer-events: none;
+	transition:0.3s;
+	font-size:1.2rem;
+    
+}
+
+.input:valid ~ span,
+.input:focus ~ span
+{
+    transform:
+		translateX(10px) translateY(-7px);	
+		color: black;
+		font-size:0.80rem;
+		margin-top:-30px;
+		background:white;
+        padding: 4px; 
+}
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+.custom-file-input {
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: grey;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .table img{
+    height: 150px;
+    width: 150px;
+}
+.table td{
+    word-wrap: break-word;
+    max-width: 100px;
+    align-self: center;
+}   
+
+/* order-list.component.css */
+
+.container-fluid {
+    padding-top: 20px;
+  }
+  
+  .table-responsive-lg {
+    margin-top: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #fff;
+  }
+  
+  .details-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .details-section h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .details-section p {
+    margin-bottom: 10px;
+  }
+  
+  .product-image img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .table-product {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-product th,
+  .table-product td {
+    padding: 10px;
+  }
+  
+  .table-product th {
+    background-color: #333;
+    color: #fff;
+  }
+  /* order-list.component.css */
+
+.user-details,
+.product-details {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-bottom: 20px; /* Add some space between the tables */
+}
+
+.user-details h5,
+.product-details h5 {
+    margin-bottom: 15px; /* Add space below the heading */
+    color: #333; /* Dark text color */
+}
+
+.user-details p,
+.product-details p {
+    margin-bottom: 10px; /* Add space below each paragraph */
+}
+
+.user-details p strong,
+.product-details p strong {
+    margin-right: 5px; /* Add space between the strong tag and the text */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+.bg-dark.text-light th,
+.bg-dark.text-light td {
+    background-color: #343a40; /* Dark background for table headers and cells */
+    color: #fff; /* White text color for table headers and cells */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+    border-color: #007bff; /* Border color */
+    color: #fff; /* Text color */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    border-color: #0056b3; /* Darker border color on hover */
+}
+.user-details {
+    font-family: Arial, sans-serif; /* Use Arial font for user details */
+    font-size: 16px; /* Larger text size */
+}
+
+.user-details-heading {
+    font-size: 20px; /* Larger heading size */
+    color: #333; /* Dark text color */
+}
+.total-amount {
+    padding: 20px; /* Add padding for spacing */
+    background-color: #f8f9fa; /* Add background color */
+    border: 1px solid #dee2e6; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+.total-amount h5 {
+    margin-bottom: 10px; /* Add margin bottom to the heading */
+    color: #333; /* Set text color */
+}
+
+
+  
+  
 

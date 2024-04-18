@@ -2,7 +2,7 @@
     <head>
     </head>
     <body>
-        <div *ngIf="showorderpage" class="container">
+        <div *ngIf="showaccountPage" class="container">
             <div class="main">
                 
                 <div class="row">
@@ -10,10 +10,10 @@
                        <div class=" text-center sidebar">
                             <div class="car-body">
                                 <div class="mt-2">
-                                    <a href="" class="">Home</a>
-                                    <a class="" (click)="order()">Orders</a>
-                                    <a href="" class="">Contact Us</a>
-                                    <a href="" class="">Setting</a>
+                                    <a routerLink="/">Home</a>
+                                    <a  (click)="UserOrderedData()">Orders</a>
+                                    <a routerLink="/contact" class="">Contact Us</a>
+                                    
                                     <a href="" class="">Sign Out</a>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
         </div>
             
             <!--order page-->
-        <section *ngIf="!showorderpage" class="h-100 gradient-custom">
+        <section *ngIf="!showorderpage" class="h-100 gradient-custom" >
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-10 col-xl-8" style="width: 100%;">
@@ -81,78 +81,33 @@
                       </div>
 
 
-                      <div class="card shadow-0 border mb-4 ">
+                      <div *ngFor="let order of OrderedData" class="card shadow-0 border mb-4" (click)="showDetails(order)" >
                         <div class="card-body bordereffect">
-                          <a href="" style="text-decoration: none;">
-                          <div class="row">
-                            <div class="col-md-2">
-                              <img src="https://www.wakefit.co/blog/wp-content/uploads/2022/01/Genuine-Leather-min.jpg"
-                                class="img-fluid" alt="furniture">
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                              <p class="text-muted mb-0">Sofa</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                              <p class="text-muted mb-0 small">Brown
-                              </p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                              <p class="text-muted mb-0 small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At iure nemo cum, illo facilis maiores porro animi nihil et, laboriosam consectetur, doloribus impedit eius mollitia rerum quos corrupti voluptas accusantium?</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                              <p class="text-muted mb-0 small">Qty: 1</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                              <p class="text-muted mb-0 small">$199</p>
-                            </div>
-                          </div>
-                        </a>
-                        </div>
-                      </div>
-
-
-                      <div class="card shadow-0 border mb-4">
-                        <div class="card-body bordereffect">
-                          <div class="row">
-                            <a href="" class="" style="text-decoration: none;">
-                              <div class="row">
-                                <div class="col-md-2">
-                                  <img src="https://www.wakefit.co/blog/wp-content/uploads/2022/01/Genuine-Leather-min.jpg"
-                                    class="img-fluid" alt="furniture">
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                  <p class="text-muted mb-0">Sofa</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                  <p class="text-muted mb-0 small">Brown
-                                  </p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                  <p class="text-muted mb-0 small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At iure nemo cum, illo facilis maiores porro animi nihil et, laboriosam consectetur, doloribus impedit eius mollitia rerum quos corrupti voluptas accusantium?</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                  <p class="text-muted mb-0 small">Qty: 1</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                  <p class="text-muted mb-0 small">$199</p>
-                                </div>
+                          <a  style="text-decoration: none;">
+                            <div class="row">
+                              <div class="col-md-2">
+                                <img [src]="order.confirmationItems[0].productImage" class="img-fluid" alt="furniture">
                               </div>
-                            </a>  
-                          </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0">{{ order.confirmationItems[0].productname }}</p>
+                              </div>
+                              <!-- Add similar columns for other details such as color, description, quantity, and price -->
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">{{ order.confirmationItems[0].description }}</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">Qty: {{ order.confirmationItems[0].quantity }}</p>
+                              </div>
+                              <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <p class="text-muted mb-0 small">{{ order.totalAmount }}</p>
+                              </div>
+                            </div>
+                          </a>
                         </div>
                       </div>
           
-                      
-          
-                      <!--<div class="d-flex justify-content-between">
-                        <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
-                        <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
-                      </div>
-          
-                      <div class="d-flex justify-content-between mb-5">
-                        <p class="text-muted mb-0">Recepits Voucher : 18KU-62IIK</p>
-                        <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges</span> Free</p>
-                      </div>-->
+
+
                     </div>
                     
                   </div>
@@ -160,5 +115,65 @@
               </div>
             </div>
           </section>
+
+
+          <div *ngIf="selectedOrder" class="details-section table-responsive-lg">
+            <button class="btn btn-primary" (click)="showTableSection()">Back to Table</button>
+            <h2 style="margin-left: 47%">Order Details</h2>
+            <div class="row">
+                <!-- User details table -->
+                <div class="col-md-6">
+                    <div class="user-details">
+                        <h5 class="user-details-heading">User Details</h5>
+                        <p><strong>Order ID:</strong> {{ selectedOrder.id }}</p>
+                        <p><strong>User ID:</strong> {{ selectedOrder.userId }}</p>
+                        <p><strong>Confirmation Date:</strong> {{ selectedOrder.confirmationDate }}</p>
+                        <p><strong>Mode of Payment:</strong> {{ selectedOrder.modeOfPayment }}</p>
+                        <p><strong>Address:</strong> {{ selectedOrder.address }}</p>
+                        <p><strong>Username:</strong> {{ selectedOrder.username }}</p>
+                    </div>
+                </div>
+                <!-- Product details table -->
+                <div class="col-md-6">
+                    <div class="product-details">
+                        <h5>Product Details</h5>
+                        <table class="table table-hover border text-center">
+                            <thead>
+                                <tr class="bg-dark text-light">
+                                    <th scope="col">Product ID</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Product Image</th>
+                                    <!-- Add more columns as needed -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of selectedOrder.confirmationItems">
+                                    <td>{{ item.productId }}</td>
+                                    <td>{{ item.productname }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td><img [src]="item.productImage" alt="Product Image"></td>
+                                    <!-- Add more cells for additional product details -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Total payment -->
+                <div class="col-md-6">
+                    <div class="total-amount  ">
+                        <h5>Total Amount</h5>
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Total Amount:</strong></td>
+                                    <td>{{ selectedOrder.totalAmount }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 

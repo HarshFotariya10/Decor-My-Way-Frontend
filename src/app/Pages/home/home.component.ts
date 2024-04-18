@@ -13,9 +13,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private http:HttpClient,private sharedService:SharedService,private router:Router){}
   ngOnInit() {
-    this.http.get('http://localhost:8080/product/random').subscribe((data:any)=>{
-      this.Randomdata=data;
-    })
+    this.Randomdata=[]
+        this.Random();
         //Fetch Authenticated Value  
         this.sharedService.isAuthenticated$.subscribe((data)=>{
           this.isUserLoggedin = data;
@@ -58,4 +57,13 @@ result:any
     }
   }
 
+  Random(){
+    this.http.get('http://localhost:8080/product/random').subscribe((data:any)=>{
+      this.Randomdata=data;
+      console.log(data);
+    })
+  }
+  exploremore(){
+    this.ngOnInit()
+  }
 }
