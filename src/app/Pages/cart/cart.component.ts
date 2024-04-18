@@ -53,6 +53,8 @@ export class CartComponent implements OnInit{
       this.UserId=data
     });
     this.cart();
+    this.Countporuduct();
+    
   }
   isUserLoggedin=false;
 
@@ -65,7 +67,9 @@ export class CartComponent implements OnInit{
   cart(){
     this.http.get(`http://localhost:8080/cart/view/${this.UserId}`).subscribe((data:any)=>{
       this.CartData=data;
+
       console.log(this.CartData)
+    
     }) 
   }
   reduceQuantity(productId:number){
@@ -104,5 +108,13 @@ export class CartComponent implements OnInit{
     else{
       alert('Please login!!');
     }
+  }
+  countproduct:any
+  Countporuduct(){
+    this.http.get(`http://localhost:8080/cart/cart/count/${this.UserId}`).subscribe((data:any)=>{
+      this.countproduct = data;
+      console.log(data);
+      this.sharedService.setSharedDatacount(this.countproduct);
+    });
   }
 }

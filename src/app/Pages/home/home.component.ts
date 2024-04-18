@@ -45,6 +45,7 @@ result:any
         
         if (data.message == 'Product added to cart successfully') {
           alert('Added to Cart Successfully!');
+          this.Countporuduct();
         } 
       },
       (error) => {
@@ -65,5 +66,13 @@ result:any
   }
   exploremore(){
     this.ngOnInit()
+  }
+
+  countproduct:any
+  Countporuduct(){
+    this.http.get(`http://localhost:8080/cart/cart/count/${this.UserId}`).subscribe((data:any)=>{
+      this.countproduct = data;
+      this.sharedService.setSharedDatacount(this.countproduct);
+    });
   }
 }

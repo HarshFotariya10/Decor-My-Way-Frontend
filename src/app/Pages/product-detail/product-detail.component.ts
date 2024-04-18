@@ -66,6 +66,7 @@ export class ProductDetailComponent implements OnInit{
       this.http.post(`http://localhost:8080/cart/add/${this.UserId}/${this.productId}`, body).subscribe((data: any) => {
         if (data.message == 'Product added to cart successfully') {
           alert('Product added to cart successfully');
+          this.Countporuduct();
         } 
       },
       (error) => {
@@ -76,6 +77,13 @@ export class ProductDetailComponent implements OnInit{
     else{
       alert("Please Login !!!!")
     }
+  }
+  countproduct:any
+  Countporuduct(){
+    this.http.get(`http://localhost:8080/cart/cart/count/${this.UserId}`).subscribe((data:any)=>{
+      this.countproduct = data;
+      this.sharedservice.setSharedDatacount(this.countproduct);
+    });
   }
 
 

@@ -12,7 +12,17 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
+  productcount:any;
+  ngOnInit(){
+    this.sharedService.sharedDataCount$.subscribe((data:any)=>{
+      this.productcount=data;
+    });
+    this.sharedService.sharedDataUserId$.subscribe((data)=>{
+      this.UserId=data
+    });
+    this.Countporuduct();
+  }
+  UserId:any
   //Validation Of Forms
   registergrp = new FormGroup({
     name: new FormControl('',Validators.required),
@@ -106,6 +116,7 @@ export class NavbarComponent {
   constructor(private http :HttpClient,private renderer: Renderer2, private el: ElementRef,private sharedService: SharedService){
 
   }
+  
 
   searchKeyword: string = '';
   sendData(SearchData:string){
@@ -137,4 +148,13 @@ SendUserId(UserId:number)
     this.showloginpage=false
   }
   
+
+  countproduct:any
+  Countporuduct(){
+    this.http.get(`http://localhost:8080/cart/cart/count/${this.UserId}`).subscribe((data:any)=>{
+      this.countproduct = data;
+      console.log(data);
+      this.sharedService.setSharedDatacount(this.countproduct);
+    });
+  }
 }

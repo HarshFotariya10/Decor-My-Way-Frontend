@@ -1,4 +1,5 @@
 // shared.service.ts
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
+  constructor(private http: HttpClient) {}
   //For Category Id
   private sharedDataSubject = new BehaviorSubject<number>(0);
   sharedData$ = this.sharedDataSubject.asObservable();
@@ -56,5 +58,12 @@ export class SharedService {
 
   setSharedDataConfirmId(productID: number) {
     this.sharedDataConfirmId.next(productID);
+  }
+
+  private sharedDataCount = new BehaviorSubject<number>(0);
+  sharedDataCount$ = this.sharedDataCount.asObservable();
+
+  setSharedDatacount(products: number) {
+    this.sharedDataCount.next(products);
   }
 }
