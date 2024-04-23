@@ -1,4 +1,14 @@
 <!-- cart.component.html -->
+<div *ngIf="CartData.length === 0; else cartNotEmpty" class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="text-black">Your Cart is Empty</h1>
+      <p>Please add items to your cart to proceed.</p>
+      <button class="btn btn-outline-black btn-lg" routerLink="/">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+<ng-template #cartNotEmpty>
 
 <div *ngFor="let cart of CartData" class="untree_co-section before-footer-section">
   <div class="container">
@@ -22,7 +32,7 @@
             <tbody *ngFor="let item of cart.cartItems">
               <tr>
                 <td class="product-thumbnail">
-                  <img src= {{item.imagename}} alt="{{ item.productname }}" class="img-fluid">
+                  <img src="{{item.imagename}}" alt="{{ item.productname }}" class="img-fluid">
                 </td>
                 <td class="product-name">
                   <h2 class="h5 text-black">{{ item.productname }}</h2>
@@ -40,7 +50,7 @@
                   </div>
                 </td>
                 <td>Rs.{{ item.price * item.quantity }}</td>
-                <td><a  class="btn btn-black btn-sm">X</a></td>
+                <td><a class="btn btn-black btn-sm">X</a></td>
               </tr>
             </tbody>
           </table>
@@ -98,3 +108,4 @@
     </div>
   </div>
 </div>
+</ng-template>

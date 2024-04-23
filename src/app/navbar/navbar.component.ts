@@ -49,7 +49,7 @@ export class NavbarComponent {
       this.http.post("http://localhost:8080/addregister",regis).subscribe((resultData : any)=>
       { 
         console.log(resultData);
-        alert("Employee registed Succesfully")
+        alert(" Register Succesfully")
         this.registergrp.reset();
       });
     }

@@ -91,13 +91,16 @@ export class ProductDetailComponent implements OnInit{
   Checkout(){
     const body ={}
     if(this.isUserLoggedin == true){
+      
       this.http.post(`http://localhost:8080/orders/addSingleProduct/${this.UserId}/${this.productId}`,body).subscribe((data:any)=>{
         this.router.navigate(['/checkout']);
-      })
-
+      },(error) => {
+        
+        alert('Product quantity not available');
+      });
     }
     else{
-      alert('Please login!!');
+      alert("Please Login !!!!")
     }
   }
   AddtoCart1(productId:number):void{

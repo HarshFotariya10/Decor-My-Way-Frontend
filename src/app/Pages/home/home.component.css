@@ -220,3 +220,59 @@
                       color: #6a6a6a; }
                 
 
+
+
+/* Slide-in from the left animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Rotate and scale animation */
+@keyframes rotateAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Apply animation to product items */
+.product-item {
+  animation-duration: 0.5s;
+  animation-fill-mode: both; /* This ensures that the element retains the styles applied by the animation */
+}
+
+.slide-in {
+  animation-name: slideInFromLeft;
+  animation-timing-function: ease-out;
+}
+
+.rotate-scale {
+  animation-name: rotateAndScale;
+  animation-timing-function: ease-in-out;
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-timing-function: ease-in-out;
+}

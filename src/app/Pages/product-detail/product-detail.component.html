@@ -19,10 +19,12 @@
         <img class="img-fluid w-100" src="{{productdata.image}}" alt="">
       </div>
       <div class="col-lg-6 col-md-12 col-12">
-        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">{{productdata.category.categoryname}}</h2>
+        <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Categoryname : {{productdata.category.categoryname}}</h2>
         <h1 class="py-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">{{productdata.productname}}</h1>
-        <h2>${{productdata.price}}</h2><br>
-        <input type="number" value="1" >
+        <h3 *ngIf="productdata.quantity > 0" style="color: green;" >In Stock: {{ productdata.quantity }}</h3>
+        <h3 *ngIf="productdata.quantity <= 0" style="color: red;">Out of Stock</h3>
+        <h2>Rs.{{productdata.price}}</h2><br>
+      
         <button class="buy-btn" (click)="AddtoCart()">Add To Cart</button>
         <span style="margin-left: 10px;"></span>
         <button class="buy-btn"(click)="Checkout()" >Buy Now</button><br>
