@@ -157,4 +157,12 @@ SendUserId(UserId:number)
       this.sharedService.setSharedDatacount(this.countproduct);
     });
   }
+
+  scrollToTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 }
