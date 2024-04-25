@@ -84,6 +84,7 @@ export class OrderComponent implements OnInit {
     // Proceed with the POST request
     this.http.post(`http://localhost:8080/Confirm/${orderId}/${this.UserId}/${this.selectedPaymentMethod}`, body)
       .subscribe((data: any) => {
+        alert("Order Placed Succesfully.");
         this.sendOrderId = data;
         this.sharedService.setSharedDataConfirmId(this.sendOrderId);
         this.router.navigate(['/ConfirmOrder']);
